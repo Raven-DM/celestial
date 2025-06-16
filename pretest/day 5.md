@@ -173,7 +173,7 @@ void testLogin() {
     assertNotNull(authService.login("user", "pass"));
 }
 ```
-Jawaban: thenReturn(null) mengembalikkan null, tetapi assertNotNull() tidak mengharapkan nilai tidak null. Ubah nilai yang dikembalikan agar tidak null atau gunakan assertNull()
+Jawaban: thenReturn(null) mengembalikkan null, tetapi assertNotNull() mengharapkan nilai tidak null. Ubah nilai yang dikembalikan agar tidak null atau gunakan assertNull()
 Kode Perbaikan:
 when(authService.login("user", "pass")).thenReturn(new User());
 assertNotNull(authService.login("user", "pass"));
